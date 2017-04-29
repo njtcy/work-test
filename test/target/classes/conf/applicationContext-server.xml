@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans  
+ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+	<bean id="HelloWorldServiceImpl" class="com.taobao.hsf.service.HelloWorldServiceImpl"/>
+	<bean id="HelloWorldService" class="com.taobao.hsf.app.spring.util.HSFSpringProviderBean" init-method="init">
+	    <property name="serviceInterface" value="com.taobao.hsf.service.HelloWorldService"/>
+	    <property name="target" ref="HelloWorldServiceImpl"/>
+	    <property name="serviceVersion" value="1.0.0"/> 
+	    <!-- 组别一致的服务才可以互相调用 --> 
+	    <property name="serviceGroup" value="HSF"/>
+	    <!--仅仅便于管理-->
+	    <property name="serviceName" value="HelloWorld"/>
+	</bean>
+
+</beans>
+
+
+
+
+
+
