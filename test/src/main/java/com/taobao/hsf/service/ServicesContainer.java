@@ -1,7 +1,11 @@
 package com.taobao.hsf.service;
 
 import com.taobao.hsf.lightapi.ServiceFactory;
-
+/**
+ * 
+ * @author tcy
+ *
+ */
 public class ServicesContainer {
 	// 作为一个Services的容器类，这个必须要放在【入口】类，并且要【static】，是为了不污染classloader，见谅。
 	public static ServiceFactory factory = ServiceFactory.getInstance();
